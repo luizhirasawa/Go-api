@@ -8,7 +8,7 @@ func Initialize() {
 
 	// define rotas
 	// funções no mesmo package podem ser acessadas sem import
-	initializeRoute(r)
+	initializeRoutes(r)
 
 	// inicializa router
 	r.Run(":8080") // listen and serve on 0.0.0.0:8080
