@@ -8,6 +8,6 @@ import (
 
 func UpdateOpeningHandler(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{
-		"msg": "create",
+		"msg": "Update create",
 	})
 }
