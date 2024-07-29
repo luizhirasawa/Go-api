@@ -1,17 +1,19 @@
 package main
 
 import (
-	"fmt"
-
 	"github.com/luizhirasawa/Go-api.git/config"
 	"github.com/luizhirasawa/Go-api.git/router"
 )
 
-func main() {
+var (
+	logger *config.Logger
+)
 
+func main() {
+	logger = config.GetLogger("Go-API: ")
 	err := config.Init()
 	if err != nil {
-		fmt.Println(err)
+		logger.ErrorF("Error initializing database: %v", err)
 		return
 	}
 
