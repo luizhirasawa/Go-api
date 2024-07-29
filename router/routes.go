@@ -9,6 +9,7 @@ import (
 
 func initializeRoutes(router *gin.Engine) {
 	fmt.Println("Hello, this is a route function.")
+	handler.InitHandler()
 	v1 := router.Group("/api/v1")
 	{
 		v1.POST("/opening", handler.PostOpeningHandler)
