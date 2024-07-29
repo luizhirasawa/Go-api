@@ -1,12 +1,10 @@
 package config
 
 import (
-	// "gorm.io/driver/postgres"
+	"fmt"
+
 	"gorm.io/gorm"
 )
-
-// dsn := "host=localhost user=gorm password=gorm dbname=gorm port=9920 sslmode=disable TimeZone=Asia/Shanghai"
-// db, err := gorm.Open(postgres.Open(dsn), &gorm.Config{})
 
 var (
 	db     *gorm.DB
@@ -14,7 +12,19 @@ var (
 )
 
 func Init() error {
+	var err error
+
+	db, err = InitDB()
+
+	if err != nil {
+		return fmt.Errorf("error initializing database: %v", err)
+	}
+
 	return nil
+}
+
+func GetPsql() *gorm.DB {
+	return db
 }
 
 func GetLogger(p string) *Logger {
