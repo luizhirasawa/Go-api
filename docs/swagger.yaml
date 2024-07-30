@@ -54,10 +54,11 @@ definitions:
 info:
   contact: {}
 paths:
-  /openings:
+  /opening:
     post:
       consumes:
       - application/json
+      description: Create a new Opening
       parameters:
       - description: Request Body
         in: body

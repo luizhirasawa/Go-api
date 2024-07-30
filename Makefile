@@ -2,7 +2,7 @@
 
 APP_NAME = Go-api
 
-default: run 
+default: run_by_default
 
 run_by_default:
 	@swag init

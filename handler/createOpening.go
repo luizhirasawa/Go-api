@@ -10,7 +10,7 @@ import (
 // @BasePath
 
 // @Summary Create Opening
-// @Sescription Create a new Opening
+// @Description Create a new Opening
 // @Tags Openings
 // @Accept json
 // @Produce json
@@ -18,7 +18,7 @@ import (
 // @Success 200 {object} CreateOpeningResponse
 // @Failure 400 {object} ErrorResponse
 // @Failure 400 {object} ErrorResponse
-// @Router /openings [post]
+// @Router /opening [post]
 func PostOpeningHandler(c *gin.Context) {
 	request := CreateOpeningRequest{}
 

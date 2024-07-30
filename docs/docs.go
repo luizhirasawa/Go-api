@@ -15,8 +15,9 @@ const docTemplate = `{
     "host": "{{.Host}}",
     "basePath": "{{.BasePath}}",
     "paths": {
-        "/openings": {
+        "/opening": {
             "post": {
+                "description": "Create a new Opening",
                 "consumes": [
                     "application/json"
                 ],
