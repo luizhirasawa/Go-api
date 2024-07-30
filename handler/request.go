@@ -8,7 +8,7 @@ func errParameterIsRequired(name, typ string) error {
 	return fmt.Errorf("%s parameter is required (type %s)", name, typ)
 }
 
-type Opening struct {
+type CreateOpeningRequest struct {
 	Role     string  `json:"role"`
 	Company  string  `json:"company"`
 	Location string  `json:"location"`
@@ -17,7 +17,7 @@ type Opening struct {
 	Salary   float64 `json:"salary"`
 }
 
-func (r *Opening) Validate() error {
+func (r *CreateOpeningRequest) Validate() error {
 	if r.Role == "" && r.Location == "" && r.Company == "" && r.Link == "" && r.Salary <= 0 && r.Remote == nil {
 		return fmt.Errorf("malformed or empty request body for Opening")
 	}
@@ -40,4 +40,20 @@ func (r *Opening) Validate() error {
 		return errParameterIsRequired("link", "string")
 	}
 	return nil
+}
+
+type UpdateOpeningRequest struct {
+	Role     string  `json:"role"`
+	Company  string  `json:"company"`
+	Location string  `json:"location"`
+	Remote   *bool   `json:"remote"`
+	Link     string  `json:"link"`
+	Salary   float64 `json:"salary"`
+}
+
+func (r *UpdateOpeningRequest) Validate() error {
+	if r.Role != "" || r.Location != "" || r.Company != "" || r.Link != "" || r.Salary > 0 || r.Remote != nil {
+		return nil
+	}
+	return fmt.Errorf("malformed or empty request body for Opening update")
 }

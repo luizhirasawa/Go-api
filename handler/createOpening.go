@@ -8,7 +8,7 @@ import (
 )
 
 func PostOpeningHandler(c *gin.Context) {
-	request := Opening{}
+	request := CreateOpeningRequest{}
 
 	c.BindJSON(&request)
 
