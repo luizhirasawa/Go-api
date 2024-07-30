@@ -7,7 +7,7 @@ import (
 	"github.com/luizhirasawa/Go-api.git/schemas"
 )
 
-// @BasePath
+// @BasePath /api/v1
 
 // @Summary Create Opening
 // @Description Create a new Opening
