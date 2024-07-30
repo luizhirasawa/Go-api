@@ -4,6 +4,9 @@ APP_NAME = Go-api
 
 default: run 
 
+run_by_default:
+	@swag init
+	@go run main.go
 run:
 	@go run main.go
 build:

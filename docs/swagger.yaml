@@ -21,6 +21,13 @@ definitions:
       message:
         type: string
     type: object
+  handler.ErrorResponse:
+    properties:
+      error:
+        type: string
+      message:
+        type: string
+    type: object
   schemas.OpeningResponse:
     properties:
       company:
@@ -51,7 +58,6 @@ paths:
     post:
       consumes:
       - application/json
-      description: Create a new Opening
       parameters:
       - description: Request Body
         in: body
@@ -66,5 +72,11 @@ paths:
           description: OK
           schema:
             $ref: '#/definitions/handler.CreateOpeningResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/handler.ErrorResponse'
       summary: Create Opening
+      tags:
+      - Openings
 swagger: "2.0"

@@ -7,6 +7,19 @@ import (
 	"github.com/luizhirasawa/Go-api.git/schemas"
 )
 
+// @BasePath
+
+// @Summary Delete an opening
+// @Description Deletes a job opening based on the provided ID.
+// @Tags Openings
+// @Accept json
+// @Produce json
+// @Param id query string true "ID of the opening to be deleted" Required
+// @Success 200 {object} DeleteOpeningResponse
+// @Failure 400 {object} ErrorResponse
+// @Failure 404 {object} ErrorResponse
+// @Router /opening [delete]
+
 func DeleteOpeningHandler(c *gin.Context) {
 	id := c.Query("id")
 	if id == "" {

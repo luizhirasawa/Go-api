@@ -7,18 +7,18 @@ import (
 	"github.com/luizhirasawa/Go-api.git/schemas"
 )
 
-//BasePath
+// @BasePath
 
-// @summary Create Opening
-// @description Create a new Opening
-// @ tags Openings
-// @accept json
-// @produce json
-// @param request body CreateOpeningRequest true "Request Body"
+// @Summary Create Opening
+// @Sescription Create a new Opening
+// @Tags Openings
+// @Accept json
+// @Produce json
+// @Param request body CreateOpeningRequest true "Request Body"
 // @Success 200 {object} CreateOpeningResponse
-// Failure 400 {object} ErrorResponse
-// Failure 400 {object} ErrorResponse
-// @router /openings [post]
+// @Failure 400 {object} ErrorResponse
+// @Failure 400 {object} ErrorResponse
+// @Router /openings [post]
 func PostOpeningHandler(c *gin.Context) {
 	request := CreateOpeningRequest{}
 
